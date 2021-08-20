@@ -25,6 +25,7 @@ public class MergeSort {
         for(int i=0; i<numbers.size();i++) System.out.println(numbers.get(i));
     }
     
+    //MergeSort method
     public static void mergeSort(ArrayList<Double> originalArray){
         int arraySize = originalArray.size();
         if(arraySize<2) return;
