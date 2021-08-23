@@ -17,7 +17,6 @@ public class CombinedSort {
 
     public static void main(String[] args) {
         ArrayList<Double> list = new ArrayList<Double>();
-        ArrayList<Double> times = new ArrayList<Double>();
         String filePath = "resources/largeDataset.csv";
         String line = "";
         try {
@@ -32,15 +31,10 @@ public class CombinedSort {
             System.out.println(e);
         }
 
-        // time function
-        for (int i = 0; i < 250; i++) {
-            double startTime = System.currentTimeMillis();
-            mergeSort(list);
-            double endTime = System.currentTimeMillis();
-            times.add(endTime - startTime);
-        }
-        Double averageTime = times.stream().mapToDouble(d -> d).average().orElse(0.0);
-        System.out.println(averageTime);
+        double startTime = System.currentTimeMillis();
+        mergeSort(list);
+        double endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
     }
 
     // merge

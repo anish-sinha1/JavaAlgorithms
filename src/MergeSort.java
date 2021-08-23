@@ -8,7 +8,6 @@ public class MergeSort {
     // Main method
     public static void main(String[] args) {
         ArrayList<Double> numbers = new ArrayList<Double>();
-        ArrayList<Double> times = new ArrayList<Double>();
         String filePath = "resources/numbers.csv";
         String line = "";
         try {
@@ -22,14 +21,10 @@ public class MergeSort {
         } catch (IOException e) {
             System.out.println(e);
         }
-        for (int i = 0; i < 250; i++) {
-            double startTime = System.currentTimeMillis();
-            mergeSort(numbers);
-            double endTime = System.currentTimeMillis();
-            times.add(endTime - startTime);
-        }
-        Double averageTime = times.stream().mapToDouble(d -> d).average().orElse(0.0);
-        System.out.println(averageTime);
+        double startTime = System.currentTimeMillis();
+        mergeSort(numbers);
+        double endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime);
     }
 
     // MergeSort method
